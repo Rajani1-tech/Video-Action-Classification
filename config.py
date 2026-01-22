@@ -3,7 +3,7 @@ import torch
 
 class Config:
     DATA_ROOT = "/home/predator/Desktop/college_project/Video-Action-Classification/dataset"
-    MODEL_PATH = "/home/predator/Desktop/college_project/Video-Action-Classification/x3d_sidx.pth"
+    MODEL_PATH = "/home/predator/Desktop/college_project/Video-Action-Classification/x3d_playtype.pth"
 
     NUM_CLASSES = 2
     CLASS_NAMES = ["run-play", "pass-play"]
