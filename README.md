@@ -6,6 +6,9 @@ Instead of modeling the entire field, the approach assumes that **QB motion with
 
 The system uses a **3D CNN (X3D)** to classify short video segments into *run-play* or *pass-play*.
 
+<img width="1536" height="1024" alt="sampling" src="https://github.com/user-attachments/assets/7fabf275-342b-4144-9313-b0936a9c466b" />
+
+
 ---
 
 ## Key Idea
