@@ -20,7 +20,7 @@ By tracking the QB and cropping short temporal windows, the model learns **discr
 - **Duration:** ~2–3 seconds per clip  
 - **Classes:** Run-play, Pass-play  
 - **Samples:** ~700 clips (≈350 per class)  
-- **Frame Sampling:** Uniform temporal sampling (16 frames per clip)  
+- **Frame Sampling:** Uniform temporal sampling (16 or 32 frames per clip)  
 
 > ⚠️ Note: Dataset is proprietary and not publicly shared.
 
@@ -28,7 +28,7 @@ By tracking the QB and cropping short temporal windows, the model learns **discr
 
 ## Model
 - **Architecture:** X3D (PyTorchVideo)  
-- **Input:** 16-frame RGB video clips  
+- **Input:** 16 or 32-frame RGB video clips  
 - **Pretraining:** Kinetics  
 - **Loss:** Cross-Entropy  
 - **Optimizer:** Adam  
