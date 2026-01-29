@@ -40,12 +40,12 @@ By tracking the QB and cropping short temporal windows, the model learns **discr
 ## Results
 
 ### Confusion Matrix
-![Confusion Matrix] <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d7bae63c-09b9-4d42-a6c5-5dbc422f3e58" />
+ <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/d7bae63c-09b9-4d42-a6c5-5dbc422f3e58" />
  
 *Figure: Confusion matrix showing per-class prediction performance.*
 
 ### Classification Report
-![Classification Report](images/classification_report.png)  
+
 *Figure: Precision, Recall, F1-score, and Accuracy for Run-play and Pass-play.*
 
 **Key Metrics:**
@@ -64,7 +64,7 @@ By tracking the QB and cropping short temporal windows, the model learns **discr
 - Designed a QB-centric approach for early play prediction.  
 - Applied 3D CNN (X3D) for spatiotemporal learning on short video clips.  
 - Demonstrated proof-of-concept for automated NFL play analysis, enabling potential real-time decision support.  
-- Showcases skills in computer vision, deep learning, and sports analytics, making it suitable for further research under a Graduate Research Assistantship.
+- Showcases skills in computer vision, deep learning, and sports analytics.
 
 
 ## Skills & Tools
