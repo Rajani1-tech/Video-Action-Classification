@@ -2,6 +2,7 @@
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 from torch.utils.data import DataLoader
 from sklearn.metrics import confusion_matrix, classification_report
 
@@ -10,37 +11,27 @@ from data.dataset import QBPlayDataset
 from models.x3d import X3DPlayClassifier
 
 
-def plot_confusion_matrix(cm, class_names):
-    fig, ax = plt.subplots(figsize=(6, 5))
-    im = ax.imshow(cm)
+def plot_confusion_matrix(cm, class_names, save_path='assets/cm.png', title="Confusion Matrix (Validation Set)"):
+    plt.figure(figsize=(8, 6))
+ 
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+                xticklabels=class_names, yticklabels=class_names) 
 
-    # Axis labels
-    ax.set_xticks(np.arange(len(class_names)))
-    ax.set_yticks(np.arange(len(class_names)))
-    ax.set_xticklabels(class_names)
-    ax.set_yticklabels(class_names)
+    plt.xlabel('Predicted Labels')
+    plt.ylabel('True Labels')
+    plt.title(title)
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
 
-    ax.set_xlabel("Predicted Label")
-    ax.set_ylabel("True Label")
-    ax.set_title("Confusion Matrix (Validation Set)")
-
-    # Rotate x labels
-    plt.setp(ax.get_xticklabels(), rotation=45, ha="right")
-
-    # Annotate cells
-    for i in range(cm.shape[0]):
-        for j in range(cm.shape[1]):
-            ax.text(j, i, cm[i, j],
-                    ha="center", va="center")
-
-    fig.tight_layout()
+    plt.savefig(save_path)
+    print(f"Confusion matrix saved at: {save_path}")
+    
     plt.show()
-
 
 def run_evaluation():
     device = Config.DEVICE
 
-    # Validation dataset
+  
     val_dataset = QBPlayDataset(
         root=f"{Config.DATA_ROOT}/val",
         training=False
@@ -75,6 +66,7 @@ def run_evaluation():
     cm = confusion_matrix(all_labels, all_preds)
     print("\nConfusion Matrix:\n", cm)
 
+
     print("\nClassification Report:")
     print(
         classification_report(
@@ -85,7 +77,8 @@ def run_evaluation():
     )
 
     # Plot
-    plot_confusion_matrix(cm, Config.CLASS_NAMES)
+    plot_confusion_matrix(cm, Config.CLASS_NAMES, save_path='assets/cm.png')
+
 
 
 if __name__ == "__main__":
