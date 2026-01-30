@@ -45,18 +45,11 @@ By tracking the QB and cropping short temporal windows, the model learns **discr
 *Figure: Confusion matrix showing per-class prediction performance.*
 
 ### Classification Report
+<img width="491" height="180" alt="image" src="https://github.com/user-attachments/assets/7d7e0346-f189-40ba-9995-93ef3c338e95" />
+
 
 *Figure: Precision, Recall, F1-score, and Accuracy for Run-play and Pass-play.*
 
-**Key Metrics:**
-
-| Class       | Precision | Recall | F1-score | Support |
-|------------|-----------|--------|----------|---------|
-| Run-Play    | 0.76      | 0.93   | 0.83     | 57      |
-| Pass-Play   | 0.89      | 0.66   | 0.76     | 50      |
-| **Accuracy** | —         | —      | —        | 0.8037  |
-| Macro Avg   | 0.82      | 0.79   | 0.80     | 107     |
-| Weighted Avg| 0.82      | 0.80   | 0.80     | 107     |
 
 ✅ The model shows strong early-stage classification capability, particularly in identifying run plays.
 
